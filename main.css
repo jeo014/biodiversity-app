@@ -1,0 +1,17 @@
+* {
+	font-family: "Cabin", sans-serif;
+}
+
+.search-input {
+	padding-bottom: 30px;
+}
+
+.map-wrapper: {
+	text-align: center;
+}
+
+.map {
+	height: 380px;
+	width: 50%;
+	border: solid black 1px;
+}
