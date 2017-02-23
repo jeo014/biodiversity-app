@@ -2,14 +2,16 @@
 	font-family: "Cabin", sans-serif;
 }
 
-.search-input {
-	padding-bottom: 30px;
-}
-
-.map-wrapper: {
-	text-align: center;
-}
-
 #map {
-	height: 100%
+  height: 400px;
+  width: 100%;
+}
+
+.input-group {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+input {
+	font-style: italic;
 }
