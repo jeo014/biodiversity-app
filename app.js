@@ -56,12 +56,19 @@ $(function() {
   }
 
   function watchSubmit(){
-    $("button").click(function(e) {
+    $(".go").click(function(e) {
       var query = $("input").find("input").val();
       getDataFromApi(query, displaySearchData);
       console.log(query);
     });
   }
+
+  function watchReload(){
+    $(".reload").click(function(){
+      location.reload();
+    })
+  }
   
   watchSubmit();
+  watchReload();
 })
