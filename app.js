@@ -1,16 +1,14 @@
+var map
+
 function initMap() {
   var centerStart = {
     lat: 38.895,
     lng: -77.036
   };
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 2,
     center: centerStart
   });
-//  var marker = new google.maps.Marker({
-  //  position: uluru,
-    // map: map
-  //});
 }
 
 $(function() {
@@ -31,14 +29,16 @@ $(function() {
     $.ajax(settings);
   }
 
-  function addMarker() {
-
-  }
 
   function listResults(array) {
-    array.forEach(function(item) {
-      $(".results-list").append("<li>Lattitude: " + item.lat + " Longitude: " + item.lng + "</li>")
+    array.map(function(item) {
+      $(".results-list").append("<li>Lattitude: " + item.lat + " Longitude: " + item.lng + "</li>");
+      var marker = new google.maps.Marker({
+        position: item,
+      })
+      marker.setMap(map);
     })
+    
   }
 
   function displaySearchData(results) {
@@ -46,35 +46,15 @@ $(function() {
     var allLocations = [];
     for (var i=1; i < results.data.length; i++) {
       var location = {
-        lat: results.data[i].decimalLatitude,
-        lng: results.data[i].decimalLongitude
+        lat: Number(results.data[i].decimalLatitude),
+        lng: Number(results.data[i].decimalLongitude)
       }
       console.log(location)
       allLocations.push(location);
-      // var marker = new google.maps.Marker({
-      //   position: location,
-      //   map: map
-      // });
     }
     console.log(allLocations)
     listResults(allLocations)
   }
-
-
-  // function displaySearchData(results) {
-  //   console.log(results)
-  //   var allLocations = {};
-  //   for (var i = 0; i < results.data.length; i++) {
-  //     var locationData = results.data[i]
-  //     var latLng = new google.maps.LatLng(locationData[i].decimalLatitude,locationData[i].decimalLongitude);
-  //     var marker = new google.maps.Marker({
-  //       position: latLng,
-  //       map: map
-  //     });
-  //     allLocations.i = [locationData[i].decimalLatitude, locationData[i].decimalLongitude];
-  //   }
-  //   console.log(allLocations)
-  // }
 
   function watchSubmit(){
     $("button").click(function(e) {
