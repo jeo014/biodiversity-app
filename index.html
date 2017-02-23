@@ -11,17 +11,34 @@
   <script src="app.js"></script>
 </head>
 <body>
-<div>
-  <h2>Find an animal!</h2>
-  <h4>Learn about biodiversity by entering the scientific name (e.g. "<i>bison bison</i>") into the search field, and observing where that animal lives on the map.</h4>
-</div>
-<div class="input-group">
-  <input type="text" placeholder="Scientific Name">
-  <button>Go</button> 
-</div>
+  <div>
+    <h2>Find an animal!</h2>
+    <h4>Learn about biodiversity by entering the scientific name into the search field, and observing where that animal lives on the map.</h4>
+    <div class="examples"> 
+      <p>Examples:</p>
+      <ul>
+        <li>Bison: "<i>Bison bison</i>"</li>
+        <li>Moose: "<i>Alces alces</i>"</li>
+        <li>Panda: "<i>Ailuropoda melanoleuca</i>"</li>
+        <li>Porcupine: "<i>Erethizon dorsatum</i>"</li>
+        <li>Koala: "<i>Phascolarctos cinereus</i>"</li>
+        <li>Puma: "<i>Puma concolor</i>"</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="input-group">
+    <input type="text" placeholder="Scientific Name">
+    <button>Go</button> 
+  </div>
+
   <div id="map"></div>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1iBBcIEg1yA1f5hU4tKZQ3f1j5gQ2Tlk&callback=initMap">
-</script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA1iBBcIEg1yA1f5hU4tKZQ3f1j5gQ2Tlk&callback=initMap">
+  </script>
+
+  <div class="results-view">
+    <ul class="results-list"></ul>
+  </div>
 </body>
 </html>
 
