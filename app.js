@@ -57,7 +57,7 @@ $(function() {
 
   function watchSubmit(){
     $(".go").click(function(e) {
-      var query = $("input").find("input").val();
+      var query = $("input").val();
       getDataFromApi(query, displaySearchData);
       console.log(query);
     });
