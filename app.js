@@ -27,6 +27,7 @@ $(function() {
       success: callback
     };
     $.ajax(settings);
+    console.log(data.searchTerm)
   }
 
 
@@ -49,10 +50,8 @@ $(function() {
         lat: Number(results.data[i].decimalLatitude),
         lng: Number(results.data[i].decimalLongitude)
       }
-      console.log(location)
       allLocations.push(location);
     }
-    console.log(allLocations)
     listResults(allLocations)
   }
 
@@ -60,6 +59,7 @@ $(function() {
     $("button").click(function(e) {
       var query = $("input").find("input").val();
       getDataFromApi(query, displaySearchData);
+      console.log(query);
     });
   }
   
