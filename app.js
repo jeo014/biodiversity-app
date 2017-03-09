@@ -72,3 +72,26 @@ $(function() {
   watchSubmit();
   watchReload();
 })
+
+// tests
+
+function checkNameMatch() {
+  if (results.species == query) {
+    return "the results match the query"
+  }
+  else {
+    return "the results do not match the query"
+  }
+}
+
+function isThereData() {
+  if (typeof(results) != "undefined") {
+    return "data is loaded"
+  }
+  else {
+    return "no data"
+  }
+}
+
+console.log(checkNameMatch());
+console.log(isThereData())
